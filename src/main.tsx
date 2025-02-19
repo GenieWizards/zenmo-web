@@ -3,8 +3,9 @@ import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 
-import reportWebVitals from "./reportWebVitals.ts";
+import { ThemeProvider } from "./components/theme-provider.tsx";
 import "./styles.css";
+import reportWebVitals from "./reportWebVitals.ts";
 
 // Create a new router instance
 const router = createRouter({ routeTree });
@@ -22,7 +23,9 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <RouterProvider router={router} />
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <RouterProvider router={router} />
+      </ThemeProvider>
     </StrictMode>,
   );
 }
