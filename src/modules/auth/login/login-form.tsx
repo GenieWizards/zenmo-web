@@ -50,10 +50,11 @@ export function LoginForm() {
       navigate({ to: "/" });
     },
     onError: (error) => {
-      // Handle error - show toast/notification
-      // TODO: Need to improve, if the backend is down then the error shows failed to fetch
-      console.error(error);
-      toast.error(error.message);
+      const errorMessage
+        = error.message === "Failed to fetch"
+          ? "Unable to connect to the server. Please try again."
+          : error.message;
+      toast.error(errorMessage);
     },
   });
 
