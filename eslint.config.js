@@ -1,4 +1,5 @@
 import antfu from "@antfu/eslint-config";
+import pluginRouter from "@tanstack/eslint-plugin-router";
 
 export default antfu(
   {
@@ -10,6 +11,9 @@ export default antfu(
       quotes: "double",
     },
     ignores: [".github/ISSUE_TEMPLATE", "src/routeTree.gen.ts"],
+    plugins: {
+      "@tanstack/router": pluginRouter,
+    },
   },
   {
     rules: {
@@ -23,6 +27,7 @@ export default antfu(
           newlinesBetween: "always",
         },
       ],
+      "@tanstack/router/create-route-property-order": "error",
     },
   },
 );
