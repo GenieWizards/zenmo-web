@@ -7,7 +7,7 @@ import viteTsConfigPaths from "vite-tsconfig-paths";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    TanStackRouterVite(),
+    TanStackRouterVite({ autoCodeSplitting: true }),
     viteReact(),
     tailwindcss(),
     viteTsConfigPaths({
