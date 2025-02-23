@@ -51,8 +51,9 @@ export function LoginForm() {
     },
     onError: (error) => {
       // Handle error - show toast/notification
+      // TODO: Need to improve, if the backend is down then the error shows failed to fetch
       console.error(error);
-      toast.error("Something went wrong, please try again");
+      toast.error(error.message);
     },
   });
 
