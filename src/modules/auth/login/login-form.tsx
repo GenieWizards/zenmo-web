@@ -32,6 +32,7 @@ export function LoginForm() {
   });
 
   const loginMutation = useMutation({
+    mutationKey: ["login"],
     mutationFn: async (login: TLogin) => {
       const response = await loginUserApi(login);
 
@@ -56,6 +57,7 @@ export function LoginForm() {
           : error.message;
       toast.error(errorMessage);
     },
+    retry: 3,
   });
 
   function onSubmit(values: TLogin) {
