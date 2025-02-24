@@ -7,6 +7,7 @@ import { routeTree } from "@/routeTree.gen";
 
 import { ThemeProvider } from "./components/theme-provider.tsx";
 import "./styles.css";
+import { Toaster } from "./components/ui/sonner.tsx";
 import reportWebVitals from "./reportWebVitals.ts";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ if (!rootElement.innerHTML) {
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <QueryClientProvider client={queryClient}>
           <RouterProvider router={router} />
+          <Toaster />
         </QueryClientProvider>
       </ThemeProvider>
     </StrictMode>,
