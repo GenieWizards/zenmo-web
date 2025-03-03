@@ -20,6 +20,7 @@ export default antfu(
       "no-console": ["warn"],
       "prefer-arrow-callback": ["error"],
       "prefer-template": ["error"],
+      "@stylistic/brace-style": ["error", "1tbs", { allowSingleLine: true }],
       "perfectionist/sort-imports": [
         "error",
         {
