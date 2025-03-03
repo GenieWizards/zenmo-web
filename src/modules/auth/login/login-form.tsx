@@ -97,7 +97,9 @@ export function LoginForm() {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button loading={loginMutation.isPending} type="submit">
+          Login
+        </Button>
       </form>
     </Form>
   );
