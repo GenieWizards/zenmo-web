@@ -34,12 +34,10 @@ export function LoginForm() {
   const loginMutation = useMutation({
     mutationKey: ["login"],
     mutationFn: async (login: TLogin) => {
-      const response = await loginUserApi(login);
+      const [result, error] = await loginUserApi(login);
 
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.message);
+      if (error !== null) {
+        throw new Error(error.message);
       }
 
       return result;
