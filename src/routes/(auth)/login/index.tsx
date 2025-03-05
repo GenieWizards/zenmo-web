@@ -1,13 +1,22 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { GalleryVerticalEnd } from "lucide-react";
 
 import { LoginComponent } from "@/modules/auth/login";
+import { useAuthStore } from "@/modules/auth/stores/auth-store";
 
 export const Route = createFileRoute("/(auth)/login/")({
   component: LoginPage,
 });
 
 function LoginPage() {
+  const navigate = useNavigate();
+
+  const { user } = useAuthStore();
+
+  if (user !== null) {
+    navigate({ to: "/" });
+  }
+
   return (
     <div className="flex min-h-svh flex-col items-center justify-center gap-6 bg-muted p-6 md:p-10 bg-black bg-[radial-gradient(#333_1px,#00000d_1px)] bg-[size:20px_20px]">
       <div className="flex w-full max-w-sm flex-col gap-6">
