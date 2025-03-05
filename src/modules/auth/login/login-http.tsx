@@ -1,8 +1,18 @@
+import type { UserResponse } from "zenmo-types";
+
 import { LOGIN_URL } from "@/utils/constants";
 
 import type { TLogin } from "../auth-schema";
 
-export async function loginUserApi(login: TLogin) {
+interface ILoginResponse {
+  message: string;
+  success: boolean;
+  data: UserResponse;
+}
+
+export async function loginUserApi(
+  login: TLogin,
+): Promise<[ILoginResponse, null] | [null, Error]> {
   try {
     const response = await fetch(`${LOGIN_URL}`, {
       method: "POST",
@@ -20,6 +30,6 @@ export async function loginUserApi(login: TLogin) {
 
     return [result, null];
   } catch (err) {
-    return [null, err];
+    return [null, err as Error];
   }
 }

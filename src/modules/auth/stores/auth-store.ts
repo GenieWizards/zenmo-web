@@ -1,21 +1,12 @@
+import type { UserResponse } from "zenmo-types";
+
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-export interface IUser {
-  id: string;
-  email: string;
-  emailVerified: boolean;
-  fullName: string;
-  role: string;
-  createdAt: string;
-  updatedAt: string;
-  session: string;
-}
-
 interface IAuthState {
-  user: IUser | null;
+  user: UserResponse | null;
   isAuthenticated: boolean;
-  setUser: (user: IUser | null) => void;
+  setUser: (user: UserResponse | null) => void;
   clearUser: () => void;
 }
 
