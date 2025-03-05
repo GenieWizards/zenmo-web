@@ -20,6 +20,7 @@ export default antfu(
       "no-console": ["warn"],
       "prefer-arrow-callback": ["error"],
       "prefer-template": ["error"],
+      "@stylistic/brace-style": ["error", "1tbs", { allowSingleLine: true }],
       "perfectionist/sort-imports": [
         "error",
         {
@@ -28,6 +29,13 @@ export default antfu(
         },
       ],
       "@tanstack/router/create-route-property-order": "error",
+      "unicorn/filename-case": [
+        "error",
+        {
+          case: "kebabCase",
+          ignore: ["README.md", "CODE_OF_CONDUCT.md", "CONTRIBUTING.md"],
+        },
+      ],
     },
   },
 );
