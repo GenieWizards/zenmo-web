@@ -18,10 +18,12 @@ import { Input } from "@/components/ui/input";
 import type { TLogin } from "../auth-schema";
 
 import { loginSchema } from "../auth-schema";
+import { useAuthStore } from "../stores/auth-store";
 import { loginUserApi } from "./login-http";
 
 export function LoginForm() {
   const navigate = useNavigate();
+  const { setUser } = useAuthStore();
 
   const form = useForm<TLogin>({
     resolver: zodResolver(loginSchema),
@@ -45,7 +47,9 @@ export function LoginForm() {
     onSuccess: (data) => {
       toast.success(data.message);
 
-      // Redirect to Home
+      setUser(data.data);
+
+      // Redirect to Home?
       navigate({ to: "/" });
     },
     onError: (error) => {
