@@ -22,10 +22,6 @@ export default defineConfig({
       // devOptions: {
       //   enabled: true,
       // },
-      workbox: {
-        // defining cached files formats
-        globPatterns: ["**/*.{js,css,html,ico,png,svg,webmanifest}"],
-      },
     }),
   ],
   test: {
