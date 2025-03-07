@@ -9,7 +9,7 @@
     "test": "vitest run",
     "eslint": "eslint .",
     "eslint:fix": "eslint . --fix",
-    "typececk": "tsc --noEmit"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.0",
