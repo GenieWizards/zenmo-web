@@ -1,6 +1,7 @@
 {
   "name": "zenmo-web",
   "type": "module",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "start": "vite --port 3000",
@@ -9,7 +10,8 @@
     "test": "vitest run",
     "eslint": "eslint .",
     "eslint:fix": "eslint . --fix",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.0",
@@ -79,6 +81,7 @@
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
+    "bumpp": "^10.0.3",
     "eslint": "^9.20.1",
     "eslint-plugin-format": "^1.0.1",
     "eslint-plugin-react-hooks": "^5.1.0",
