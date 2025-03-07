@@ -15,28 +15,29 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
-import type { TLogin } from "../auth-schema";
+import type { TRegister } from "../auth-schema";
 
-import { loginSchema } from "../auth-schema";
+import { registerSchema } from "../auth-schema";
 import { useAuthStore } from "../stores/auth-store";
-import { loginUserApi } from "./login-http";
+import { registerUserApi } from "./register-http";
 
-export function LoginForm() {
+export function RegisterForm() {
   const navigate = useNavigate();
   const { setUser } = useAuthStore();
 
-  const form = useForm<TLogin>({
-    resolver: zodResolver(loginSchema),
+  const form = useForm<TRegister>({
+    resolver: zodResolver(registerSchema),
     defaultValues: {
+      fullName: "",
       email: "",
       password: "",
     },
   });
 
-  const loginMutation = useMutation({
-    mutationKey: ["login"],
-    mutationFn: async (login: TLogin) => {
-      const [result, error] = await loginUserApi(login);
+  const registerMutation = useMutation({
+    mutationKey: ["register"],
+    mutationFn: async (register: TRegister) => {
+      const [result, error] = await registerUserApi(register);
 
       if (error !== null) {
         throw new Error(error.message);
@@ -49,7 +50,7 @@ export function LoginForm() {
 
       setUser(data.data);
 
-      // Redirect to Home?
+      // Redirect to Home
       navigate({ to: "/" });
     },
     onError: (error) => {
@@ -62,8 +63,9 @@ export function LoginForm() {
     retry: 3,
   });
 
-  function onSubmit(values: TLogin) {
-    loginMutation.mutate({
+  function onSubmit(values: TRegister) {
+    registerMutation.mutate({
+      fullName: values.fullName,
       email: values.email,
       password: values.password,
     });
@@ -72,6 +74,20 @@ export function LoginForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <FormField
+          control={form.control}
+          name="fullName"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Full Name</FormLabel>
+              <FormControl>
+                <Input placeholder="John Doe" type="text" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
         <FormField
           control={form.control}
           name="email"
@@ -99,8 +115,8 @@ export function LoginForm() {
             </FormItem>
           )}
         />
-        <Button loading={loginMutation.isPending} type="submit">
-          Login
+        <Button loading={registerMutation.isPending} type="submit">
+          Register
         </Button>
       </form>
     </Form>
