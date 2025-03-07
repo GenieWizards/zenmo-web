@@ -8,7 +8,8 @@
     "serve": "vite preview",
     "test": "vitest run",
     "eslint": "eslint .",
-    "eslint:fix": "eslint . --fix"
+    "eslint:fix": "eslint . --fix",
+    "typececk": "tsc --noEmit"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.0",
@@ -93,7 +94,7 @@
     "web-vitals": "^4.2.4"
   },
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
+    "pre-commit": "bun typecheck && npx lint-staged"
   },
   "lint-staged": {
     "*": "eslint --fix"
