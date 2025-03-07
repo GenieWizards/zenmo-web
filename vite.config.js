@@ -18,7 +18,7 @@ export default defineConfig({
     }),
     VitePWA({
       registerType: "autoUpdate",
-      // Enable devOoptions to see the output of the plugin in development
+      // Enable devOptions to see the output of the plugin in development
       // devOptions: {
       //   enabled: true,
       // },
