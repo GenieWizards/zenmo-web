@@ -44,7 +44,7 @@ export function LogoutComponent({
   });
 
   const handleLogout = () => {
-    logoutMutation.mutateAsync();
+    logoutMutation.mutate();
   };
 
   return (
