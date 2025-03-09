@@ -10,6 +10,14 @@ interface ILoginResponse {
   data: UserResponse;
 }
 
+/**
+ * Authenticates a user by making a POST request to the login endpoint.
+ *
+ * @param {TLogin} login - The login credentials containing username/email and password.
+ * @returns {Promise<[ILoginResponse, null] | [null, Error]>} A promise that resolves to a tuple.
+ * The first element is the login response if successful, or null if there was an error.
+ * The second element is null if successful, or an Error object if there was an error.
+ */
 export async function loginUserApi(
   login: TLogin,
 ): Promise<[ILoginResponse, null] | [null, Error]> {
@@ -20,6 +28,7 @@ export async function loginUserApi(
         "Content-Type": "application/json",
       },
       body: JSON.stringify(login),
+      credentials: "include",
     });
 
     const result = await response.json();
