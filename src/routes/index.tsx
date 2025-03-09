@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { ThemeToggle } from "@/components/theme-toggle";
+import { LogoutComponent } from "@/modules/auth/logout/logout-component";
 import { useAuthStore } from "@/modules/auth/stores/auth-store";
 
 export const Route = createFileRoute("/")({
@@ -14,6 +15,7 @@ function App() {
     <div className="text-center">
       <ThemeToggle />
       {user?.fullName}
+      {user?.fullName && <LogoutComponent />}
     </div>
   );
 }
