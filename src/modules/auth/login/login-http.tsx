@@ -28,6 +28,7 @@ export async function loginUserApi(
         "Content-Type": "application/json",
       },
       body: JSON.stringify(login),
+      credentials: "include",
     });
 
     const result = await response.json();

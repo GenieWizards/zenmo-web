@@ -28,6 +28,7 @@ export async function registerUserApi(
         "Content-Type": "application/json",
       },
       body: JSON.stringify(register),
+      credentials: "include",
     });
 
     const result = await response.json();
