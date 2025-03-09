@@ -48,8 +48,10 @@ export function LogoutComponent({
   };
 
   return (
-    <div className={cn("flex flex-col gap-6 w-20", className)} {...props}>
-      <Button onClick={handleLogout}>Logout</Button>
+    <div className={cn("flex flex-col gap-6 w-32", className)} {...props}>
+      <Button onClick={handleLogout} loading={logoutMutation.isPending}>
+        {logoutMutation.isPending ? "Logging out..." : "Logout"}
+      </Button>
     </div>
   );
 }
