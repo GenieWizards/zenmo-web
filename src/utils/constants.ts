@@ -1,9 +1,7 @@
-import { env } from "@/env";
-
 export const API_URL
-  = env.VITE_NODE_ENV === "production"
-    ? env.VITE_API_URL
-    : env.VITE_API_URL_LOCAL;
+  = import.meta.env.VITE_NODE_ENV === "production"
+    ? import.meta.env.VITE_API_URL
+    : import.meta.env.VITE_API_URL_LOCAL;
 
 export const LOGIN_URL = `${API_URL}/auth/login`;
 export const REGISTER_URL = `${API_URL}/auth/register`;
