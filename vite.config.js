@@ -10,15 +10,11 @@ export default defineConfig(({ mode }) => {
   // eslint-disable-next-line node/prefer-global/process
   const env = loadEnv(mode, process.cwd(), "");
 
-  const API_URL = `${env.VITE_API_URL ?? "http://localhost:8999"}`;
   const PORT = `${env.VITE_PORT ?? "3000"}`;
-  const NODE_ENV = `${env.NODE_ENV ?? "development"}`;
 
   return {
     server: {
       port: Number(PORT),
-      API_URL,
-      NODE_ENV,
     },
     plugins: [
       TanStackRouterVite({
