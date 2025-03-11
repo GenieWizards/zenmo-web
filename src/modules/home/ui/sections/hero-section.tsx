@@ -9,7 +9,7 @@ export function HeroSection() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-background pt-16 md:pt-24 lg:pt-32 flex justify-center items-center">
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-background py-16 md:py-24 lg:py-32 flex justify-center items-center">
       <div className="px-4 md:px-8 max-w-7xl relative z-10">
         <div className="grid gap-6 md:grid-cols-2 md:gap-10">
           <motion.div
@@ -22,7 +22,7 @@ export function HeroSection() {
               Split expenses. Track finances. All in one app.
             </div>
             <motion.h1
-              className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl"
+              className="text-4xl md:text-3xl font-bold tracking-tighter sm:text-5xl lg:text-6xl"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.7 }}
@@ -60,7 +60,7 @@ export function HeroSection() {
             </motion.div>
           </motion.div>
           <motion.div
-            className="relative mt-8 md:mt-0"
+            className="relative mt-8 md:mt-0 self-center"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.7 }}
@@ -96,7 +96,7 @@ export function HeroSection() {
               />
             </div>
             <motion.div
-              className="absolute -bottom-2 -left-12 z-20 hidden md:block"
+              className="absolute -bottom-32 -left-12 z-20 hidden md:block"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.5 }}
