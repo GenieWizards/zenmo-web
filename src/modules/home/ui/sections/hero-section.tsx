@@ -10,7 +10,7 @@ export function HeroSection() {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-background pt-16 md:pt-24 lg:pt-32 flex justify-center items-center">
-      <div className="max-w-7xl relative z-10">
+      <div className="px-4 md:px-8 max-w-7xl relative z-10">
         <div className="grid gap-6 md:grid-cols-2 md:gap-10">
           <motion.div
             className="flex flex-col justify-center items-center space-y-4"
@@ -96,7 +96,7 @@ export function HeroSection() {
               />
             </div>
             <motion.div
-              className="absolute -bottom-2 -left-12 z-20"
+              className="absolute -bottom-2 -left-12 z-20 hidden md:block"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.5 }}
