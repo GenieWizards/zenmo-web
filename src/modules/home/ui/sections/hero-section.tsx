@@ -40,9 +40,8 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.7 }}
             >
-              SplitPay combines the best of expense splitting with seamless
-              payment processing. Track debts, split bills, and pay friends
-              instantly.
+              Zenmo combines the best of expense splitting with seamless payment
+              processing. Track debts, split bills, and pay friends instantly.
             </motion.p>
             <motion.div
               className="flex flex-col gap-2 min-[400px]:flex-row py-4"

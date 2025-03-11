@@ -74,7 +74,7 @@ export function FeaturesSection() {
             Everything you need to manage expenses
           </h2>
           <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl">
-            SplitPay combines the best features of expense splitting and payment
+            Zenmo combines the best features of expense splitting and payment
             apps in one seamless experience.
           </p>
         </motion.div>
