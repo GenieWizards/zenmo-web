@@ -79,6 +79,7 @@ export function HeroSection() {
                   src="https://placehold.co/600x300/svg"
                   alt="Zenmo"
                   className="mx-auto rounded-xl shadow-2xl"
+                  loading="eager"
                 />
               </motion.div>
               <motion.div
