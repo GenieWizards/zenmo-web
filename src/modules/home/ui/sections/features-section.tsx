@@ -86,7 +86,7 @@ export function FeaturesSection() {
               className="group relative overflow-hidden rounded-lg border border-gray-700 bg-gray-800 p-6 hover:shadow-md hover:shadow-primary/5 transition-all"
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.1 * 0, duration: 0.5 }}
+              transition={{ delay: 0.1 * 0, duration: 0.1 }}
               whileHover={{ y: -5 }}
             >
               <div className="mb-4">{feature.icon}</div>
