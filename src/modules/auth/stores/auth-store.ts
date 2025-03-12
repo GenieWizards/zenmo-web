@@ -11,6 +11,7 @@ interface IAuthState {
 }
 
 export const useAuthStore = create<IAuthState>()(
+
   persist(
     set => ({
       user: null,
@@ -20,7 +21,11 @@ export const useAuthStore = create<IAuthState>()(
     }),
     {
       name: "auth-storage",
-      partialize: state => ({ user: state.user }), // Only persist user data
+      partialize: state => ({
+        user: state.user
+          ? { ...state.user, session: undefined }
+          : null,
+      }),
     },
   ),
 );
