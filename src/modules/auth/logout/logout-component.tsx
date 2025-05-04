@@ -19,15 +19,19 @@ export function LogoutComponent({
     mutationKey: ["logout"],
     mutationFn: async () => {
       const [result, error] = await logoutUserApi();
-
       if (error !== null) {
+        if (error.message === "You are not authorized, please login.") {
+          clearUser();
+          navigate({ to: "/" });
+          return;
+        }
         throw new Error(error.message);
       }
 
       return result;
     },
     onSuccess: (data) => {
-      toast.success(data.message);
+      toast.success(data?.message);
 
       clearUser();
 
