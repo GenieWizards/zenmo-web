@@ -3,6 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LogoutComponent } from "@/modules/auth/logout/logout-component";
 import { useAuthStore } from "@/modules/auth/stores/auth-store";
+import { FeaturesSection } from "@/modules/home/ui/sections/features-section";
+import { HeroSection } from "@/modules/home/ui/sections/hero-section";
+import { HowItWorksSection } from "@/modules/home/ui/sections/how-it-works";
 
 export const Route = createFileRoute("/")({
   component: App,
@@ -16,6 +19,9 @@ function App() {
       <ThemeToggle />
       {user?.fullName}
       {user?.fullName && <LogoutComponent />}
+      <HeroSection />
+      <FeaturesSection />
+      <HowItWorksSection />
     </div>
   );
 }
