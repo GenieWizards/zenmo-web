@@ -19,6 +19,11 @@ export function LogoutComponent({
     mutationKey: ["logout"],
     mutationFn: async () => {
       const [result, error] = await logoutUserApi();
+      if (error?.message === "You are not authorized, please login.") {
+        clearUser();
+        navigate({ to: "/" });
+        return { message: "Logged out" };
+      }
 
       if (error !== null) {
         throw new Error(error.message);
