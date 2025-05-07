@@ -43,6 +43,11 @@ export const Route = createRootRoute({
   component: RootComponent,
 });
 
+/**
+ * Renders the application's root layout, wrapping nested routes with the main HTML document structure.
+ *
+ * This component serves as the entry point for all nested routes, ensuring they are rendered within the {@link RootDocument} layout.
+ */
 function RootComponent() {
   return (
     <RootDocument>
@@ -51,6 +56,11 @@ function RootComponent() {
   );
 }
 
+/**
+ * Renders the root HTML document structure for the application, including head content, React Query context, developer tools, notifications, and scripts.
+ *
+ * @param children - The React nodes to be rendered within the document body.
+ */
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html>
