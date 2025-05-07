@@ -1,3 +1,4 @@
+import appCss from "@/styles/app.css?url";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import {
@@ -26,12 +27,17 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       ...seo({
-        title:
-          "Zenmo - The ultimate Finance Management System",
+        title: "Zenmo - The ultimate Finance Management System",
         description: `Zenmo: Split expenses, track finances, find balance.`,
       }),
       { rel: "manifest", href: "/site.webmanifest", color: "#fffff" },
       { rel: "icon", href: "/favicon.ico" },
+    ],
+    links: [
+      {
+        rel: "stylesheet",
+        href: appCss,
+      },
     ],
   }),
   component: RootComponent,
