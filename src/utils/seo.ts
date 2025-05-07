@@ -1,3 +1,14 @@
+/**
+ * Generates an array of metadata tag objects for SEO and social media sharing.
+ *
+ * Constructs standard meta tags, Twitter card tags, and Open Graph tags based on the provided information. If an image URL is supplied, additional image-related tags are included.
+ *
+ * @param title - The page title to use in metadata.
+ * @param description - Optional description for the page.
+ * @param keywords - Optional comma-separated keywords for the page.
+ * @param image - Optional URL of an image to use for social sharing previews.
+ * @returns An array of objects representing meta and title tags for SEO and social platforms.
+ */
 export function seo({
   title,
   description,

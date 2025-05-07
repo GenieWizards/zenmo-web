@@ -2,7 +2,11 @@ import { createRouter as createTanStackRouter } from "@tanstack/react-router";
 
 import { routeTree } from "@/routeTree.gen";
 
-// Create a new router instance
+/**
+ * Creates and configures a new router instance with the application's route tree, intent-based preloading, and scroll restoration enabled.
+ *
+ * @returns A configured router instance for use in the application.
+ */
 export function createRouter() {
   const router = createTanStackRouter({
     routeTree,
