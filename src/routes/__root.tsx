@@ -67,38 +67,40 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
 
-        {/* Google Tag Manager snippet */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag() {
-                dataLayer.push(arguments);
-              }
-              gtag("js", new Date());
+        {/* FIXME: Find a better way to add the below script safely */}
 
-              gtag("config", "G-TRCB701S2S");
-            `,
-          }}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function (c, l, a, r, i, t, y) {
-                c[a] =
-                  c[a] ||
-                  function () {
-                    (c[a].q = c[a].q || []).push(arguments);
-                  };
-                t = l.createElement(r);
-                t.async = 1;
-                t.src = "https://www.clarity.ms/tag/" + i;
-                y = l.getElementsByTagName(r)[0];
-                y.parentNode.insertBefore(t, y);
-              })(window, document, "clarity", "script", "qm5cfatim4");
-            `,
-          }}
-        />
+        {/* Google Tag Manager snippet */}
+        {/* <script */}
+        {/*   dangerouslySetInnerHTML={{ */}
+        {/*     __html: ` */}
+        {/*       window.dataLayer = window.dataLayer || []; */}
+        {/*       function gtag() { */}
+        {/*         dataLayer.push(arguments); */}
+        {/*       } */}
+        {/*       gtag("js", new Date()); */}
+        {/**/}
+        {/*       gtag("config", "G-TRCB701S2S"); */}
+        {/*     `, */}
+        {/*   }} */}
+        {/* /> */}
+        {/* <script */}
+        {/*   dangerouslySetInnerHTML={{ */}
+        {/*     __html: ` */}
+        {/*       (function (c, l, a, r, i, t, y) { */}
+        {/*         c[a] = */}
+        {/*           c[a] || */}
+        {/*           function () { */}
+        {/*             (c[a].q = c[a].q || []).push(arguments); */}
+        {/*           }; */}
+        {/*         t = l.createElement(r); */}
+        {/*         t.async = 1; */}
+        {/*         t.src = "https://www.clarity.ms/tag/" + i; */}
+        {/*         y = l.getElementsByTagName(r)[0]; */}
+        {/*         y.parentNode.insertBefore(t, y); */}
+        {/*       })(window, document, "clarity", "script", "qm5cfatim4"); */}
+        {/*     `, */}
+        {/*   }} */}
+        {/* /> */}
       </head>
       <body>
         <QueryClientProvider client={queryClient}>
