@@ -11,6 +11,7 @@ import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import * as React from "react";
 import { Toaster } from "sonner";
 
+import { ThemeProvider } from "@/components/theme-provider";
 import { IS_PRODUCTION } from "@/utils/constants";
 import { seo } from "@/utils/seo";
 
@@ -104,14 +105,16 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <QueryClientProvider client={queryClient}>
-          {children}
-          {!IS_PRODUCTION && (
-            <>
-              <ReactQueryDevtools buttonPosition="bottom-right" />
-              <TanStackRouterDevtools />
-            </>
-          )}
-          <Toaster />
+          <ThemeProvider>
+            {children}
+            {!IS_PRODUCTION && (
+              <>
+                <ReactQueryDevtools buttonPosition="bottom-right" />
+                <TanStackRouterDevtools />
+              </>
+            )}
+            <Toaster />
+          </ThemeProvider>
         </QueryClientProvider>
 
         <Scripts />
