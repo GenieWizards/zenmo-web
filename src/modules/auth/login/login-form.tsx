@@ -59,7 +59,7 @@ export function LoginForm() {
           : error.message;
       toast.error(errorMessage);
     },
-    retry: 3,
+    retry: 1,
   });
 
   function onSubmit(values: TLogin) {

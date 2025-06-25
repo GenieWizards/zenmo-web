@@ -60,7 +60,7 @@ export function RegisterForm() {
           : error.message;
       toast.error(errorMessage);
     },
-    retry: 3,
+    retry: 1,
   });
 
   function onSubmit(values: TRegister) {
