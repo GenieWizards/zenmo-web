@@ -31,14 +31,14 @@ export const Route = createRootRoute({
         title: "Zenmo - The ultimate Finance Management System",
         description: `Zenmo: Split expenses, track finances, find balance.`,
       }),
-      { rel: "manifest", href: "/site.webmanifest", color: "#fffff" },
-      { rel: "icon", href: "/favicon.ico" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "manifest", href: "/site.webmanifest", color: "#ffffff" },
+      { rel: "icon", href: "/favicon.ico" },
     ],
   }),
   component: RootComponent,
