@@ -49,7 +49,7 @@ export function DashboardSidebar() {
       </SidebarHeader>
 
       <div className="px-4 py-2">
-        <Separator className="opacity-10 text-[#fff]" />
+        <Separator className="opacity-10 h-0.5 bg-white" />
       </div>
 
       <SidebarContent>
