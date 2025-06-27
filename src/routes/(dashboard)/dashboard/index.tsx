@@ -5,5 +5,10 @@ export const Route = createFileRoute("/(dashboard)/dashboard/")({
 });
 
 function RouteComponent() {
-  return <div>Hello "from the route"!</div>;
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-6">Dashboard Overview</h1>
+      {/* Add dashboard widgets, charts, summaries, etc. */}
+    </div>
+  );
 }
