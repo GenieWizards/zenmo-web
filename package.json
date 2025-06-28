@@ -95,7 +95,7 @@
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.7.2",
     "vite": "^6.1.0",
-    "vite-plugin-pwa": "^0.21.1",
+    "vite-plugin-pwa": "^1.0.0",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.5",
     "web-vitals": "^4.2.4"
