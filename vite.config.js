@@ -1,6 +1,6 @@
 import tailwindcss from "@tailwindcss/vite";
-import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
-import viteReact from "@vitejs/plugin-react";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import tanstackRouter from "@tanstack/router-plugin/vite";
 import { defineConfig, loadEnv } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 import viteTsConfigPaths from "vite-tsconfig-paths";
@@ -17,10 +17,9 @@ export default defineConfig(({ mode }) => {
       port: Number(PORT),
     },
     plugins: [
-      TanStackRouterVite({
+      tanstackRouter({
         autoCodeSplitting: true,
       }),
-      viteReact(),
       tailwindcss(),
       viteTsConfigPaths({
         projects: ["./tsconfig.json"],
@@ -31,6 +30,11 @@ export default defineConfig(({ mode }) => {
         // devOptions: {
         //   enabled: true,
         // },
+      }),
+      tanstackStart({
+        tsr: {
+          srcDirectory: "src",
+        },
       }),
     ],
     test: {
