@@ -15,7 +15,7 @@ function RouteComponent() {
   return (
     <SidebarProvider>
       <DashboardSidebar />
-      <main>
+      <main className="w-full">
         <div className="flex items-center space-x-2">
           <SidebarTrigger />
           <DashboardBreadcrumb pathnames={pathnames} />

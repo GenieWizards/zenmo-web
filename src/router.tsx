@@ -2,6 +2,8 @@ import { createRouter as createTanStackRouter } from "@tanstack/react-router";
 
 import { routeTree } from "@/routeTree.gen";
 
+import { NotFound } from "./components/not-found";
+
 /**
  * Creates and configures a new router instance with the application's route tree, intent-based preloading, and scroll restoration enabled.
  *
@@ -12,6 +14,7 @@ export function createRouter() {
     routeTree,
     defaultPreload: "intent",
     scrollRestoration: true,
+    defaultNotFoundComponent: () => <NotFound />,
   });
 
   return router;
