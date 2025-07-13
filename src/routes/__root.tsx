@@ -1,4 +1,3 @@
-import appCss from "@/styles/app.css?url";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import {
@@ -12,6 +11,7 @@ import * as React from "react";
 import { Toaster } from "sonner";
 
 import { ThemeProvider } from "@/components/theme-provider";
+import appCss from "@/styles/app.css?url";
 import { IS_PRODUCTION } from "@/utils/constants";
 import { seo } from "@/utils/seo";
 
@@ -60,7 +60,8 @@ function RootComponent() {
 /**
  * Renders the root HTML document structure for the application, including head content, React Query context, developer tools, notifications, and scripts.
  *
- * @param children - The React nodes to be rendered within the document body.
+ * @param props - The object containing the children to be rendered within the document body.
+ * @param props.children - The React nodes to be rendered within the document body.
  */
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
